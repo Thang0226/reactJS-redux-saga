@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { handleLogin } from "../redux/action";
 
 function Login() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Login() {
   };
 
   const login = () => {
-    dispatch({ type: "LOGIN", payload: user });
+    dispatch(handleLogin(user));
   };
 
   useEffect(() => {
